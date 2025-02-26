@@ -55,6 +55,7 @@ body {
   color: var(--color-default);
   background-color: var(--color-background);
   font-family: var(--font-default);
+
 }
 
 a {
@@ -2914,4 +2915,14 @@ section {
 .blog-details .comments .reply-form .btn-primary:hover {
   color: var(--color-inverse);
   background-color: rgba(var(--color-primary-rgb), 0.8);
+}
+
+/*For styles in payment */
+.upload-box {
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #555;
 }
