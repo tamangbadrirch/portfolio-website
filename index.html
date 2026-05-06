@@ -1197,6 +1197,41 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
+  <!-- AI Assistant Widget -->
+<button id="ai-bubble" aria-label="Open chat" onclick="
+  var f=document.getElementById('ai-frame');
+  var open=f.style.display==='block';
+  f.style.display=open?'none':'block';
+  this.innerHTML=open?'💬':'✕';">💬</button>
+
+<div id="ai-frame">
+  <iframe src="https://YOUR-LOVABLE-URL" title="AI Assistant"
+          allow="clipboard-write"></iframe>
+</div>
+
+<style>
+  #ai-bubble{
+    position:fixed;bottom:20px;right:20px;width:60px;height:60px;
+    border-radius:50%;background:#106eea;color:#fff;border:none;
+    font-size:26px;cursor:pointer;z-index:99999;
+    box-shadow:0 8px 24px rgba(16,110,234,.4);
+    transition:transform .2s;
+  }
+  #ai-bubble:hover{transform:scale(1.08);}
+  #ai-frame{
+    display:none;position:fixed;bottom:90px;right:20px;
+    width:390px;height:580px;max-width:calc(100vw - 30px);
+    max-height:calc(100vh - 120px);
+    border-radius:16px;overflow:hidden;z-index:99999;
+    box-shadow:0 20px 50px rgba(0,0,0,.3);background:#fff;
+  }
+  #ai-frame iframe{width:100%;height:100%;border:0;display:block;}
+  @media(max-width:480px){
+    #ai-frame{right:10px;left:10px;width:auto;bottom:90px;}
+  }
+</style>
+  
+
 </body>
 
 </html>
