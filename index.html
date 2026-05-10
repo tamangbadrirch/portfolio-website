@@ -144,61 +144,451 @@
 
     </section><!-- End Clients Section -->
 
-    <!-- About Section - Home Page -->
-    <section id="about" class="about">
+  <!-- About Section - Home Page -->
+<section id="about" class="about">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row align-items-xl-center gy-5">
+  <style>
 
-          <div class="col-xl-5 content">
-            <h3>About Us</h3>
-            <h2>Focus on your business, let hassle of IT for us.</h2>
-            <p>We aim to fulfill your everyday IT needs. You can Forget everything & dial our numbers, we will take care of every IT requirement for you and your organization. Thats our assurance!  </p>
-            <a href="#" class="read-more"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+    /* ===============================
+       ABOUT SECTION
+    ================================== */
+
+    .about {
+      padding: 80px 0;
+      background: #f8f8f8;
+    }
+
+    /* ===============================
+       LEFT CONTENT AREA
+    ================================== */
+
+    .about-left-area {
+      padding-right: 25px;
+    }
+
+    /* ===============================
+       CERTIFICATION BANNER
+    ================================== */
+
+    .certification-banner {
+      position: relative;
+      display: flex;
+      align-items: center;
+      background: #fff;
+      border: 2px solid rgba(255, 73, 73, 0.20);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(255, 70, 70, 0.10);
+
+      /* IMPORTANT */
+      width: 100%;
+      max-width: 760px;
+
+      margin-bottom: 50px;
+      padding: 25px 30px 25px 25px;
+
+    }
+
+    /* TOP RIGHT CUT */
+    .certification-banner::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 90px;
+      height: 90px;
+      background: #f8f8f8;
+      clip-path: polygon(100% 0, 0 0, 100% 100%);
+    }
+
+    /* LEFT RED LOGO BOX */
+    .cert-left {
+      width: 120px;
+      min-width: 120px;
+      height: 170px;
+
+      background: linear-gradient(180deg, #ff3434, #8e0f2f);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 10px;
+
+      clip-path: polygon(0 0, 100% 0, 100% 82%, 50% 100%, 0 82%);
+
+      margin-right: 30px;
+
+      /* PREVENT TOUCHING */
+      flex-shrink: 0;
+    }
+
+    .cert-left i {
+      font-size: 58px;
+      color: #fff;
+    }
+
+    /* RIGHT CONTENT */
+    .cert-right {
+      flex: 1;
+      padding-right: 40px;
+    }
+
+    /* BADGE */
+    .cert-badge {
+      display: inline-block;
+
+      background: linear-gradient(90deg, #ff3434, #ff5d5d);
+
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+
+      padding: 10px 20px;
+
+      border-radius: 10px;
+
+      margin-bottom: 22px;
+
+      letter-spacing: 1px;
+
+      box-shadow: 0 6px 18px rgba(255, 70, 70, 0.25);
+    }
+
+    /* MAIN TITLE */
+    .cert-right h3 {
+
+      font-size: 25px;
+      line-height: 1.55;
+      font-weight: 800;
+      margin: 0;
+
+      background: linear-gradient(
+        90deg,
+        #ff3131,
+        #d63384,
+        #7b2ff7,
+        #3764ff
+      );
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+
+    }
+
+    /* ===============================
+       ABOUT CONTENT
+    ================================== */
+
+    .about .content h3 {
+      font-size: 15px;
+      font-weight: 700;
+      color: #ff4a4a;
+      background: rgba(255, 74, 74, 0.08);
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .about .content h2 {
+      font-size: 54px;
+      font-weight: 800;
+      line-height: 1.18;
+      margin-bottom: 25px;
+      color: #172033;
+    }
+
+    .about .content p {
+      font-size: 18px;
+      line-height: 1.9;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    /* BUTTON */
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      background: linear-gradient(90deg, #ff3131, #ff5c5c);
+
+      color: #fff;
+      padding: 14px 28px;
+
+      border-radius: 10px;
+
+      font-weight: 700;
+      text-decoration: none;
+
+      transition: 0.3s ease;
+
+      box-shadow: 0 8px 20px rgba(255, 49, 49, 0.22);
+    }
+
+    .read-more:hover {
+      transform: translateY(-3px);
+      color: #fff;
+    }
+
+    /* ===============================
+       ICON BOXES
+    ================================== */
+
+    .icon-box {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 18px;
+      height: 100%;
+
+      transition: 0.3s ease;
+
+      box-shadow: 0 6px 18px rgba(0,0,0,0.04);
+    }
+
+    .icon-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+    }
+
+    .icon-box i {
+
+      width: 75px;
+      height: 75px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+
+      background: rgba(255, 73, 73, 0.08);
+
+      color: #ff3d3d;
+
+      font-size: 34px;
+
+      margin-bottom: 25px;
+    }
+
+    .icon-box h3 {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.35;
+      margin-bottom: 18px;
+      color: #1f2937;
+    }
+
+    .icon-box p {
+      color: #555;
+      line-height: 1.9;
+      font-size: 17px;
+    }
+
+    /* ===============================
+       MOBILE
+    ================================== */
+
+    @media (max-width: 991px) {
+
+      .certification-banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 25px;
+      }
+
+      .cert-left {
+        margin-right: 0;
+        margin-bottom: 25px;
+      }
+
+      .cert-right {
+        padding-right: 0;
+      }
+
+      .cert-right h3 {
+        font-size: 22px;
+      }
+
+      .about .content h2 {
+        font-size: 40px;
+      }
+
+    }
+
+    @media (max-width: 576px) {
+
+      .certification-banner {
+        padding: 20px;
+      }
+
+      .cert-right h3 {
+        font-size: 20px;
+      }
+
+      .about .content h2 {
+        font-size: 34px;
+      }
+
+    }
+
+  </style>
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row align-items-start gy-5">
+
+      <!-- LEFT SIDE -->
+      <div class="col-xl-6 about-left-area">
+
+        <!-- CERTIFICATION BANNER -->
+        <div class="certification-banner" data-aos="zoom-in" data-aos-delay="150">
+
+          <div class="cert-left">
+            <i class="bi bi-award"></i>
           </div>
 
-          <div class="col-xl-7">
-            <div class="row gy-4 icon-boxes">
+          <div class="cert-right">
 
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box">
-                  <i class="bi bi-buildings"></i>
-                  <h3>Eius provident</h3>
-                  <p>Magni repellendus vel ullam hic officia accusantium ipsa dolor omnis dolor voluptatem</p>
-                </div>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon-box">
-                  <i class="bi bi-clipboard-pulse"></i>
-                  <h3>Rerum aperiam</h3>
-                  <p>Autem saepe animi et aut aspernatur culpa facere. Rerum saepe rerum voluptates quia</p>
-                </div>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon-box">
-                  <i class="bi bi-command"></i>
-                  <h3>Veniam omnis</h3>
-                  <p>Omnis perferendis molestias culpa sed. Recusandae quas possimus. Quod consequatur corrupti</p>
-                </div>
-              </div> <!-- End Icon Box -->
-
-              <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
-                <div class="icon-box">
-                  <i class="bi bi-graph-up-arrow"></i>
-                  <h3>Delares sapiente</h3>
-                  <p>Sint et dolor voluptas minus possimus nostrum. Reiciendis commodi eligendi omnis quideme lorenda</p>
-                </div>
-              </div> <!-- End Icon Box -->
-
+            <div class="cert-badge">
+              ★ CERTIFIED & TRUSTED ★
             </div>
+
+            <h3>
+              Comptia Security+ {SY0-701} Certified, AWS Certified Solutions Architect {SAA-C03},
+              AWS Certified Security Specialty {SCS-C03} .....
+            </h3>
+
           </div>
 
         </div>
+
+        <!-- ABOUT CONTENT -->
+        <div class="content">
+
+          <h3>About Us</h3>
+
+          <h2>
+            Focus on your business, let hassle of IT for us.
+          </h2>
+
+          <p>
+            We aim to fulfill your everyday IT needs.
+            You can Forget everything & dial our numbers,
+            we will take care of every IT requirement for you
+            and your organization. Thats our assurance!
+          </p>
+
+          <a href="#" class="read-more">
+            <span>Read More</span>
+            <i class="bi bi-arrow-right"></i>
+          </a>
+
+        </div>
+
       </div>
 
-    </section><!-- End About Section -->
+      <!-- RIGHT SIDE -->
+      <div class="col-xl-6">
+
+        <div class="row gy-4 icon-boxes">
+
+          <!-- CARD 1 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="icon-box">
+
+              <i class="bi bi-shield-lock"></i>
+
+              <h3>
+                Certified Cybersecurity Professional
+              </h3>
+
+              <p>
+                Passionate about cybersecurity,
+                risk management, and protecting
+                digital assets from evolving cyber threats.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- CARD 2 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+
+            <div class="icon-box">
+
+              <i class="bi bi-cloud-check"></i>
+
+              <h3>
+                AWS Certified Architect
+              </h3>
+
+              <p>
+                Helping businesses migrate,
+                optimize, and secure workloads
+                in the AWS cloud environment.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- CARD 3 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+
+            <div class="icon-box">
+
+              <i class="bi bi-lock"></i>
+
+              <h3>
+                Security-Focused Cloud Engineer
+              </h3>
+
+              <p>
+                Specialized in AWS cloud security,
+                IAM policies, monitoring, and
+                secure infrastructure deployment.
+              </p>
+
+            </div>
+
+          </div>
+
+          <!-- CARD 4 -->
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+
+            <div class="icon-box">
+
+              <i class="bi bi-tools"></i>
+
+              <h3>
+                Problem Solver & IT Consultant
+              </h3>
+
+              <p>
+                Experienced in troubleshooting,
+                infrastructure management,
+                and delivering practical technology solutions.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- End About Section -->
 
     <!-- Stats Section - Home Page -->
     <section id="stats" class="stats">
