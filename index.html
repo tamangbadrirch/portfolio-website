@@ -1507,7 +1507,7 @@
         <div class="error-message"></div>
 
         <div class="sent-message">
-          Your message has been sent successfully.
+          Your message has been received. Our representative will get back to you soon.
         </div>
 
         <button type="submit">Send Message</button>
@@ -1657,6 +1657,7 @@
     let error = form.querySelector('.error-message');
     let sent = form.querySelector('.sent-message');
 
+    // 1. Show loading, hide previous messages
     loading.style.display = 'block';
     error.style.display = 'none';
     sent.style.display = 'none';
@@ -1671,15 +1672,22 @@
       });
 
       loading.style.display = 'none';
+
+      // 2. CHECK IF THE RESPONSE IS ACTUALLY OK
       if (response.ok) {
+        // SUCCESS: Hide error box, show green success box
+        error.style.display = 'none'; 
         sent.style.display = 'block';
         form.reset();
       } else {
-        throw new Error("Form submission failed");
+        // SERVER ERROR (e.g., 404 or 500)
+        const data = await response.json();
+        throw new Error(data.error || "Form submission failed");
       }
     } catch (err) {
+      // 3. NETWORK ERROR OR CUSTOM ERROR
       loading.style.display = 'none';
-      error.innerHTML = "Error: Could not send message.";
+      error.innerHTML = "Oops! There was a problem. Please try again.";
       error.style.display = 'block';
     }
   });
