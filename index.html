@@ -1657,9 +1657,58 @@ document.querySelector('.php-email-form').addEventListener('submit', async funct
   const error = form.querySelector('.error-message');
   const sent = form.querySelector('.sent-message');
 
-  loading.style.display = 'block';
+  const name = form.querySelector('[name="name"]').value.trim();
+  const email = form.querySelector('[name="email"]').value.trim();
+  const subject = form.querySelector('[name="subject"]').value.trim();
+  const message = form.querySelector('[name="message"]').value.trim();
+
+  // reset UI
   error.style.display = 'none';
   sent.style.display = 'none';
+
+  // =========================
+  // 🔐 VALIDATION FUNCTIONS
+  // =========================
+
+  function hasUnsafeChars(value) {
+    return /[<>&#;:]/.test(value);
+  }
+
+  function isValidSubject(value) {
+    return /^[A-Za-z\s]+$/.test(value); // only letters + spaces
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email);
+  }
+
+  // =========================
+  // 🔴 VALIDATION CHECKS
+  // =========================
+
+  if (hasUnsafeChars(name) || hasUnsafeChars(subject) || hasUnsafeChars(message)) {
+    error.innerHTML = "Invalid characters detected in input fields.";
+    error.style.display = 'block';
+    return;
+  }
+
+  if (!isValidSubject(subject)) {
+    error.innerHTML = "Subject must contain only letters (no numbers or symbols).";
+    error.style.display = 'block';
+    return;
+  }
+
+  if (!isValidEmail(email)) {
+    error.innerHTML = "Please enter a valid email address.";
+    error.style.display = 'block';
+    return;
+  }
+
+  // =========================
+  // 🚀 SEND REQUEST
+  // =========================
+
+  loading.style.display = 'block';
 
   try {
     const response = await fetch(form.action, {
@@ -1674,6 +1723,12 @@ document.querySelector('.php-email-form').addEventListener('submit', async funct
     if (response.ok && data.ok) {
       sent.style.display = 'block';
       form.reset();
+
+      // ⏱ auto-hide success message after 30 seconds
+      setTimeout(() => {
+        sent.style.display = 'none';
+      }, 30000);
+
     } else {
       error.innerHTML = "Message failed. Please try again.";
       error.style.display = 'block';
