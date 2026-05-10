@@ -1607,7 +1607,7 @@
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
@@ -1649,8 +1649,8 @@
 
  <!-- Contact form update script -->
 <script>
-document.querySelector('.php-email-form').addEventListener('submit', async function (event) {
-  event.preventDefault();
+document.querySelector('.php-email-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
 
   const form = this;
   const loading = form.querySelector('.loading');
@@ -1665,30 +1665,23 @@ document.querySelector('.php-email-form').addEventListener('submit', async funct
     const response = await fetch(form.action, {
       method: 'POST',
       body: new FormData(form),
-      headers: {
-        'Accept': 'application/json'
-      }
+      headers: { 'Accept': 'application/json' }
     });
 
+    const data = await response.json();
     loading.style.display = 'none';
 
-    const data = await response.json();
-
-    // ✅ SUCCESS CONDITION (IMPORTANT FIX)
-    if (response.ok && data.ok === true) {
+    if (response.ok && data.ok) {
       sent.style.display = 'block';
       form.reset();
-
-      // OPTIONAL: redirect if you want Formspree "thanks page"
-      // if (data.next) window.location.href = data.next;
-
     } else {
-      throw new Error("Form submission failed");
+      error.innerHTML = "Message failed. Please try again.";
+      error.style.display = 'block';
     }
 
   } catch (err) {
     loading.style.display = 'none';
-    error.innerHTML = "Message could not be sent. Please try again.";
+    error.innerHTML = "Network error. Please try again.";
     error.style.display = 'block';
   }
 });
