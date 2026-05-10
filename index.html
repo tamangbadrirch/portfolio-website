@@ -1649,20 +1649,20 @@
 
  <!-- Contact form update script -->
 <script>
-document.querySelector('.php-email-form').addEventListener('submit', async function(event) {
+document.querySelector('.php-email-form').addEventListener('submit', async function (event) {
   event.preventDefault();
 
-  let form = this;
-  let loading = form.querySelector('.loading');
-  let error = form.querySelector('.error-message');
-  let sent = form.querySelector('.sent-message');
+  const form = this;
+  const loading = form.querySelector('.loading');
+  const error = form.querySelector('.error-message');
+  const sent = form.querySelector('.sent-message');
 
   loading.style.display = 'block';
   error.style.display = 'none';
   sent.style.display = 'none';
 
   try {
-    let response = await fetch(form.action, {
+    const response = await fetch(form.action, {
       method: 'POST',
       body: new FormData(form),
       headers: {
@@ -1672,18 +1672,23 @@ document.querySelector('.php-email-form').addEventListener('submit', async funct
 
     loading.style.display = 'none';
 
-    let data = await response.json();
+    const data = await response.json();
 
-    if (response.ok && data.ok) {
+    // ✅ SUCCESS CONDITION (IMPORTANT FIX)
+    if (response.ok && data.ok === true) {
       sent.style.display = 'block';
       form.reset();
+
+      // OPTIONAL: redirect if you want Formspree "thanks page"
+      // if (data.next) window.location.href = data.next;
+
     } else {
-      throw new Error("Submission failed");
+      throw new Error("Form submission failed");
     }
 
   } catch (err) {
     loading.style.display = 'none';
-    error.innerHTML = "Oops! Message could not be sent. Please try again.";
+    error.innerHTML = "Message could not be sent. Please try again.";
     error.style.display = 'block';
   }
 });
