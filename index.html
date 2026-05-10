@@ -1662,20 +1662,27 @@ document.querySelector('.php-email-form').addEventListener('submit', async funct
   const subject = form.querySelector('[name="subject"]').value.trim();
   const message = form.querySelector('[name="message"]').value.trim();
 
-  // reset UI
   error.style.display = 'none';
   sent.style.display = 'none';
 
   // =========================
-  // 🔐 VALIDATION FUNCTIONS
+  // 🔐 VALIDATION HELPERS
   // =========================
 
   function hasUnsafeChars(value) {
     return /[<>&#;:]/.test(value);
   }
 
+  function hasAtLeastOneLetter(value) {
+    return /[A-Za-z]/.test(value);
+  }
+
+  function isOnlyNumbers(value) {
+    return /^[0-9\s]+$/.test(value);
+  }
+
   function isValidSubject(value) {
-    return /^[A-Za-z\s]+$/.test(value); // only letters + spaces
+    return /^[A-Za-z\s]+$/.test(value);
   }
 
   function isValidEmail(email) {
@@ -1686,18 +1693,39 @@ document.querySelector('.php-email-form').addEventListener('submit', async funct
   // 🔴 VALIDATION CHECKS
   // =========================
 
-  if (hasUnsafeChars(name) || hasUnsafeChars(subject) || hasUnsafeChars(message)) {
+  // Block unsafe characters
+  if (
+    hasUnsafeChars(name) ||
+    hasUnsafeChars(subject) ||
+    hasUnsafeChars(message)
+  ) {
     error.innerHTML = "Invalid characters detected in input fields.";
     error.style.display = 'block';
     return;
   }
 
-  if (!isValidSubject(subject)) {
-    error.innerHTML = "Subject must contain only letters (no numbers or symbols).";
+  // Name must not be numbers only
+  if (isOnlyNumbers(name) || !hasAtLeastOneLetter(name)) {
+    error.innerHTML = "Name must contain letters and cannot be numbers only.";
     error.style.display = 'block';
     return;
   }
 
+  // Subject must contain only letters
+  if (!isValidSubject(subject)) {
+    error.innerHTML = "Subject must contain only letters.";
+    error.style.display = 'block';
+    return;
+  }
+
+  // Message must contain at least one letter (not only numbers)
+  if (isOnlyNumbers(message) || !hasAtLeastOneLetter(message)) {
+    error.innerHTML = "Message must contain text (not only numbers).";
+    error.style.display = 'block';
+    return;
+  }
+
+  // Email validation
   if (!isValidEmail(email)) {
     error.innerHTML = "Please enter a valid email address.";
     error.style.display = 'block';
@@ -1727,7 +1755,7 @@ document.querySelector('.php-email-form').addEventListener('submit', async funct
       // ⏱ auto-hide success message after 30 seconds
       setTimeout(() => {
         sent.style.display = 'none';
-      }, 30000);
+      }, 3000);
 
     } else {
       error.innerHTML = "Message failed. Please try again.";
@@ -1741,7 +1769,6 @@ document.querySelector('.php-email-form').addEventListener('submit', async funct
   }
 });
 </script>
-
 </body>
 
 </html>
