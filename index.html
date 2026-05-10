@@ -1480,7 +1480,7 @@
           </div>
 
           <div class="col-lg-6">
-  <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+  <form action="https://formspree.io/f/xwvywrqz" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
 
     <div class="row gy-4">
 
@@ -1645,6 +1645,45 @@
     #ai-frame{right:10px;left:10px;width:auto;bottom:90px;}
   }
 </style>
+
+
+ <!-- Contact form update script -->
+<script>
+  document.querySelector('.php-email-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    
+    let form = this;
+    let loading = form.querySelector('.loading');
+    let error = form.querySelector('.error-message');
+    let sent = form.querySelector('.sent-message');
+
+    loading.style.display = 'block';
+    error.style.display = 'none';
+    sent.style.display = 'none';
+
+    let formData = new FormData(form);
+
+    try {
+      let response = await fetch(form.getAttribute('action'), {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      loading.style.display = 'none';
+      if (response.ok) {
+        sent.style.display = 'block';
+        form.reset();
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (err) {
+      loading.style.display = 'none';
+      error.innerHTML = "Error: Could not send message.";
+      error.style.display = 'block';
+    }
+  });
+</script>
   
 
 </body>
