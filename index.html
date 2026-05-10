@@ -1649,49 +1649,45 @@
 
  <!-- Contact form update script -->
 <script>
-  document.querySelector('.php-email-form').addEventListener('submit', async function(event) {
-    event.preventDefault();
-    
-    let form = this;
-    let loading = form.querySelector('.loading');
-    let error = form.querySelector('.error-message');
-    let sent = form.querySelector('.sent-message');
+document.querySelector('.php-email-form').addEventListener('submit', async function(event) {
+  event.preventDefault();
 
-    // 1. Show loading, hide previous messages
-    loading.style.display = 'block';
-    error.style.display = 'none';
-    sent.style.display = 'none';
+  let form = this;
+  let loading = form.querySelector('.loading');
+  let error = form.querySelector('.error-message');
+  let sent = form.querySelector('.sent-message');
 
-    let formData = new FormData(form);
+  loading.style.display = 'block';
+  error.style.display = 'none';
+  sent.style.display = 'none';
 
-    try {
-      let response = await fetch(form.getAttribute('action'), {
-        method: 'POST',
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      });
-
-      loading.style.display = 'none';
-
-      // 2. CHECK IF THE RESPONSE IS ACTUALLY OK
-      if (response.ok) {
-        // SUCCESS: Hide error box, show green success box
-        error.style.display = 'none'; 
-        sent.style.display = 'block';
-        form.reset();
-      } else {
-        // SERVER ERROR (e.g., 404 or 500)
-        const data = await response.json();
-        throw new Error(data.error || "Form submission failed");
+  try {
+    let response = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: {
+        'Accept': 'application/json'
       }
-    } catch (err) {
-      // 3. NETWORK ERROR OR CUSTOM ERROR
-      loading.style.display = 'none';
-      error.innerHTML = "Oops! There was a problem. Please try again.";
-      error.style.display = 'block';
+    });
+
+    loading.style.display = 'none';
+
+    let data = await response.json();
+
+    if (response.ok && data.ok) {
+      sent.style.display = 'block';
+      form.reset();
+    } else {
+      throw new Error("Submission failed");
     }
-  });
-</script> 
+
+  } catch (err) {
+    loading.style.display = 'none';
+    error.innerHTML = "Oops! Message could not be sent. Please try again.";
+    error.style.display = 'block';
+  }
+});
+</script>
 
 </body>
 
