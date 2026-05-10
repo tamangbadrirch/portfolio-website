@@ -1480,7 +1480,7 @@
           </div>
 
           <div class="col-lg-6">
-  <form action="https://formspree.io/f/xwvywrqz" method="POST" class="class="contact-form-custom"" data-aos="fade-up" data-aos-delay="200">
+  <form action="https://formspree.io/f/xwvywrqz" method="POST" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
 
     <div class="row gy-4">
 
@@ -1649,7 +1649,7 @@
 
  <!-- Contact form update script -->
 <script>
-  document.querySelector('.contact-form-custom').addEventListener('submit', async function(event) {
+  document.querySelector('.php-email-form').addEventListener('submit', async function(event) {
     event.preventDefault();
     
     let form = this;
@@ -1657,11 +1657,10 @@
     let error = form.querySelector('.error-message');
     let sent = form.querySelector('.sent-message');
 
-    // Show loading, hide both boxes
+    // 1. Show loading, hide previous messages
     loading.style.display = 'block';
     error.style.display = 'none';
     sent.style.display = 'none';
-    error.innerHTML = ""; // Clear any old error text
 
     let formData = new FormData(form);
 
@@ -1674,25 +1673,25 @@
 
       loading.style.display = 'none';
 
+      // 2. CHECK IF THE RESPONSE IS ACTUALLY OK
       if (response.ok) {
-        // SUCCESS
+        // SUCCESS: Hide error box, show green success box
+        error.style.display = 'none'; 
         sent.style.display = 'block';
-        error.style.display = 'none'; // Force hide the red box
         form.reset();
       } else {
-        // SERVER ERROR
+        // SERVER ERROR (e.g., 404 or 500)
         const data = await response.json();
-        throw new Error(data.error || "Submission failed");
+        throw new Error(data.error || "Form submission failed");
       }
     } catch (err) {
-      // ACTUAL ERROR
+      // 3. NETWORK ERROR OR CUSTOM ERROR
       loading.style.display = 'none';
       error.innerHTML = "Oops! There was a problem. Please try again.";
       error.style.display = 'block';
-      sent.style.display = 'none';
     }
   });
-</script>  
+</script> 
 
 </body>
 
