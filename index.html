@@ -78,7 +78,7 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav><!-- End Nav Menu -->
 
-      <a class="btn-getstarted" href="index.html#about">Get Started</a>
+      <a class="btn-getstarted" href="index.html#call-to-action">Get Started</a>
 
     </div>
   </header><!-- End Header -->
@@ -97,10 +97,70 @@
             <p data-aos="fade-up" data-aos-delay="200">We are team of talented IT Professionals who serves to assist with the everyday IT needs of your organization</p>
           </div>
           <div class="col-lg-5">
-            <form action="#" class="sign-up-form d-flex" data-aos="fade-up" data-aos-delay="300">
-              <input type="text" class="form-control" placeholder="Enter email address">
-              <input type="submit" class="btn btn-primary" value="Sign up">
-            </form>
+
+
+            <!-- Newsletter Signup Form -->
+<form 
+  action="https://formspree.io/f/mdabjdre"
+  method="POST"
+  class="sign-up-form d-flex"
+  data-aos="fade-up"
+  data-aos-delay="300"
+  id="newsletter-form"
+>
+
+  <input 
+    type="email"
+    name="email"
+    class="form-control"
+    placeholder="Enter email address"
+    required
+  >
+
+  <input 
+    type="submit"
+    class="btn btn-primary"
+    value="Sign up"
+  >
+
+</form>
+
+<!-- form validation script for newsletter signup --> 
+<script>
+document.getElementById("newsletter-form").addEventListener("submit", function(e) {
+
+    const emailInput = this.querySelector('input[name="email"]');
+
+    // Normalize
+    let email = emailInput.value.trim().toLowerCase();
+
+    // Strict sanitization
+    email = email.replace(/[^\w@.+-]/g, '');
+
+    // Length restriction
+    if (email.length > 100) {
+        e.preventDefault();
+        alert("Email too long.");
+        return false;
+    }
+
+    // Strong email validation
+    const emailRegex =
+        /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}$/;
+
+    if (!emailRegex.test(email)) {
+
+        e.preventDefault();
+
+        alert("Please enter a valid email address.");
+
+        return false;
+    }
+
+    emailInput.value = email;
+
+});
+</script>
           </div>
         </div>
       </div>
@@ -1163,7 +1223,7 @@
           <!-- WhatsApp Button -->
           <a
             class="cta-btn whatsapp-btn"
-            href="https://wa.me/9779812345678?text=Hello%20I%20would%20like%20to%20start%20a%20conversation"
+            href="https://wa.me/9779828159666?text=Hi%21%20I%27d%20love%20to%20learn%20more."
             target="_blank"
           >
             <i class="bi bi-whatsapp"></i>
