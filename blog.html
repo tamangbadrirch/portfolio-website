@@ -32,8 +32,8 @@
 
 <body class="blog-page" data-bs-spy="scroll" data-bs-target="#navmenu">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header sticky-top d-flex align-items-center">
+   <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="container-fluid d-flex align-items-center justify-content-between">
 
       <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
@@ -46,16 +46,16 @@
       <!-- Nav Menu -->
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero">Home</a></li>
+          <li><a href="index.html#hero" class="active">Home</a></li>
           <li><a href="index.html#about">About</a></li>
           <li><a href="index.html#services">Services</a></li>
           <li><a href="index.html#portfolio">Portfolio</a></li>
           <li><a href="index.html#team">Team</a></li>
-          <li><a href="blog.html" class="active">Blog</a></li>
-          <li class="dropdown has-dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down"></i></a>
+          <li><a href="blog.html">Blog</a></li>
+          <li class="dropdown has-dropdown"><a href="#"><span>Tutorials</span> <i class="bi bi-chevron-down"></i></a>
             <ul class="dd-box-shadow">
-              <li><a href="#">Dropdown 1</a></li>
-              <li class="dropdown has-dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down"></i></a>
+              <li><a href="#">Cyber Security Solutions</a></li>
+              <!-- <li class="dropdown has-dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down"></i></a>
                 <ul class="dd-box-shadow">
                   <li><a href="#">Deep Dropdown 1</a></li>
                   <li><a href="#">Deep Dropdown 2</a></li>
@@ -63,10 +63,10 @@
                   <li><a href="#">Deep Dropdown 4</a></li>
                   <li><a href="#">Deep Dropdown 5</a></li>
                 </ul>
-              </li>
-              <li><a href="#">Dropdown 2</a></li>
-              <li><a href="#">Dropdown 3</a></li>
-              <li><a href="#">Dropdown 4</a></li>
+              </li> -->
+              <li><a href="#">Cloud Computing Solutions</a></li>
+              <li><a href="#">Networking Solutions</a></li>
+              <li><a href="#">Programming & Development</a></li>
             </ul>
           </li>
           <li><a href="index.html#contact">Contact</a></li>
@@ -257,7 +257,7 @@ I write about practical applications of Artificial Intelligence, Cloud Computing
 
   </main>
 
-  <!-- ======= Footer ======= -->
+   <!-- ======= Footer ======= -->
   <footer id="footer" class="footer">
 
     <div class="container footer-top">
@@ -266,23 +266,21 @@ I write about practical applications of Artificial Intelligence, Cloud Computing
           <a href="index.html" class="logo d-flex align-items-center">
             <span>BadriG</span>
           </a>
-          <p>
-Cybersecurity and cloud-focused IT professional specializing in secure system design, AWS security, and web application protection. Passionate about building secure, scalable, and reliable digital solutions.
-</p>
+          <p>We are social</p>
           <div class="social-links d-flex mt-4">
-            <a href=""><i class="bi bi-twitter"></i></a>
-            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href="https://twitter.com/nischal_rox"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/SoftTechITNetwork"><i class="bi bi-facebook"></i></a>
             <a href=""><i class="bi bi-instagram"></i></a>
-            <a href=""><i class="bi bi-linkedin"></i></a>
+            <a href="https://www.linkedin.com/in/badri-tamang-577854200/"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
 
         <div class="col-lg-2 col-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
             <li><a href="#">Terms of service</a></li>
             <li><a href="#">Privacy policy</a></li>
           </ul>
@@ -291,24 +289,22 @@ Cybersecurity and cloud-focused IT professional specializing in secure system de
         <div class="col-lg-2 col-6 footer-links">
           <h4>Our Services</h4>
           <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
+            <li><a href="#service">Software Development</a></li>
+            <li><a href="#service">Web Development</a></li>
+            <li><a href="#service">Digital Marketing</a></li>
+            <li><a href="#service">VAPT & IT Audit</a></li>
+            <li><a href="#service">Remote Support</a></li>
           </ul>
         </div>
 
         <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
-  <h4>Contact Us</h4>
-
-  <p>Old Baneshwor, Baneshwor Road</p>
-  <p>Kathmandu, 44602</p>
-  <p>Bagmati, Nepal</p>
-
-  <p class="mt-4"><strong>Phone:</strong> <span>+977 9844228622</span></p>
-  <p><strong>Email:</strong> <span>tamangbadrirch@gmail.com</span></p>
-</div>
+          <h4>Contact Us</h4>
+          <p>Old Baneshwor, Baneshwor Road</p>
+          <p>Kathmandu, 44602</p>
+          <p>Bagmati, Nepal</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+977 9844228622</span></p>
+          <p><strong>Email:</strong> <span>tamangbadrirch@gmail.com</span></p>
+        </div>
 
       </div>
     </div>
@@ -316,12 +312,14 @@ Cybersecurity and cloud-focused IT professional specializing in secure system de
     <div class="container copyright text-center mt-4">
       <p>&copy; <span>Copyright</span> <strong class="px-1">BadriG</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
-        
+       
         Designed by <a href="https://techloverdude.blogspot.com/">TechLover</a>
       </div>
     </div>
 
   </footer><!-- End Footer -->
+
+  
 
   <!-- Scroll Top Button -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>

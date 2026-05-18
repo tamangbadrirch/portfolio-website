@@ -5,187 +5,485 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Securing AI Systems - Blog</title>
+  <title>Blog Details - Append Bootstrap Temlate</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+
+  
 </head>
 
-<body class="blog-details-page">
+<body class="blog-details-page" data-bs-spy="scroll" data-bs-target="#navmenu">
 
-<!-- ===== Header (UNCHANGED) ===== -->
-<header id="header" class="header sticky-top d-flex align-items-center">
-  <div class="container-fluid d-flex align-items-center justify-content-between">
-    <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-      <h1>Append</h1><span>.</span>
-    </a>
+  <!-- ======= Header ======= -->
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
 
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>BadriG</h1>
+        <span>.</span>
+      </a>
 
-<main id="main">
+      <!-- Nav Menu -->
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html#hero" class="active">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#portfolio">Portfolio</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li class="dropdown has-dropdown"><a href="#"><span>Tutorials</span> <i class="bi bi-chevron-down"></i></a>
+            <ul class="dd-box-shadow">
+              <li><a href="#">Cyber Security Solutions</a></li>
+              <!-- <li class="dropdown has-dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down"></i></a>
+                <ul class="dd-box-shadow">
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li> -->
+              <li><a href="#">Cloud Computing Solutions</a></li>
+              <li><a href="#">Networking Solutions</a></li>
+              <li><a href="#">Programming & Development</a></li>
+            </ul>
+          </li>
+          <li><a href="index.html#contact">Contact</a></li>
+        </ul>
 
-<!-- ===== Page Title ===== -->
-<div class="page-title">
-  <div class="container text-center">
-    <h1>Securing AI Systems</h1>
-    <p>Emerging Risks and Hard-Won Best Practices in 2026</p>
-  </div>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav><!-- End Nav Menu -->
+
+      <a class="btn-getstarted" href="index.html#call-to-action">Get Started</a>
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+    <!-- Blog Details Page Title & Breadcrumbs -->
+    <div data-aos="fade" class="page-title">
+      <div class="heading">
+        <div class="container">
+          <div class="row d-flex justify-content-center text-center">
+            <div class="col-lg-8">
+              <h1>Blog Details</h1>
+              <p class="mb-0">
+  A deep dive into emerging AI security risks and real-world best practices for securing modern autonomous systems in 2026.
+</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <nav class="breadcrumbs">
+        <div class="container">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">Blog Details</li>
+          </ol>
+        </div>
+      </nav>
+    </div><!-- End Page Title -->
+
+    <!-- Blog-details Section - Blog Details Page -->
+    <section id="blog-details" class="blog-details">
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row g-5">
+
+          <div class="col-lg-8">
+
+            <article class="article">
+
+              <div class="post-img">
+                <img src="assets/img/blog/blog-1.jpg" alt="" class="img-fluid">
+              </div>
+
+              <h2 class="title">Securing AI Systems: Emerging Risks and Hard-Won Best Practices in 2026</h2>
+
+              <div class="meta-top">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-details.html">Badri Tamang</a></li>
+<li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-details.html"><time datetime="2026-05-01">May 2026</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-details.html">12 Comments</a></li>
+                </ul>
+              </div><!-- End meta top -->
+
+              <div class="content">
+
+  <p><strong>By Badri Tamang | Published: May 2026</strong></p>
+
+  <p>
+    When I started my journey in IT fifteen years ago, our defensive perimeter was straightforward. We talked about configuring strict firewall rules, provisioning hardware arrays, securing virtualization layers, and patching traditional web application vulnerabilities like SQL injection or Cross-Site Scripting (XSS).
+  </p>
+
+  <p>
+    Fast forward to 2026, and the landscape has undergone a tectonic shift. Artificial Intelligence (AI) is no longer a futuristic experiment. It is deeply embedded into enterprise infrastructure, cloud orchestration networks, and backend logic.
+  </p>
+
+  <p>
+    We have entered the era of <strong>Agentic AI</strong>—autonomous systems that execute multi-step operations and interact with internal systems.
+  </p>
+
+  <blockquote>
+    <p>
+      The more autonomy we give to AI systems, the more dangerous they become if left unsecured.
+    </p>
+  </blockquote>
+
+  <h3>1. The Anatomy of Modern AI Risk</h3>
+
+  <p>
+    AI security today goes far beyond privacy. The real threats come from architectural manipulation.
+  </p>
+
+  <h4>A. Agent Goal Hijacking</h4>
+  <p>
+    Modern prompt injection can alter the objective of an AI agent. A hidden instruction inside data can redirect the AI to perform unauthorized actions.
+  </p>
+
+  <h4>B. Tool Misuse</h4>
+  <p>
+    AI systems connected to tools can trigger recursive loops, causing denial-of-service or data leaks.
+  </p>
+
+  <h4>C. Training Data Poisoning</h4>
+  <p>
+    Compromised datasets can introduce hidden backdoors into models, triggering malicious outputs under specific conditions.
+  </p>
+
+  <h3>2. Hardening the Architecture</h3>
+
+  <h4>Practice 1: Treat AI Output as Untrusted</h4>
+  <p>
+    Always validate and encode AI outputs before using them in applications or databases.
+  </p>
+
+  <h4>Practice 2: Micro-Segmentation</h4>
+  <p>
+    Run AI systems in isolated environments and apply strict Role-Based Access Control (RBAC).
+  </p>
+
+  <h4>Practice 3: Behavioral Guardrails</h4>
+  <p>
+    Monitor AI behavior in real-time to detect anomalies and block malicious actions.
+  </p>
+
+  <h4>Practice 4: Incident Response</h4>
+  <p>
+    Maintain logs of AI decisions and prepare recovery strategies for compromised models.
+  </p>
+
+  <h3>The Path Forward</h3>
+
+  <p>
+    AI security is not just a feature—it is an architectural responsibility. By combining Zero Trust principles, secure cloud design, and strong governance, organizations can safely leverage AI.
+  </p>
+
+  <p>
+    Stay vigilant. Build securely. Never let your guardrails lag behind your capabilities.
+  </p>
+
 </div>
 
-<!-- ===== Blog Content ===== -->
-<section class="blog-details">
-<div class="container">
-<div class="row g-5">
+<!-- End post content -->
 
-<!-- LEFT ARTICLE -->
-<div class="col-lg-8">
+              <div class="meta-bottom">
+                <i class="bi bi-folder"></i>
+                <ul class="cats">
+                  <li><a href="#">Cyber Security</a></li>
+                </ul>
 
-<article class="article">
+                <i class="bi bi-tags"></i>
+                <ul class="tags">
+                  
+                  <li><a href="#">Cloud</a></li>
+                  <li><a href="#">AI</a></li>
+                </ul>
+              </div><!-- End meta bottom -->
 
-  <div class="post-img">
-    <img src="assets/img/blog/blog-1.jpg" class="img-fluid">
-  </div>
+            </article><!-- End post article -->
 
-  <h2>Securing AI Systems: Risks and Best Practices in 2026</h2>
+            <div class="blog-author d-flex align-items-center">
+  <img src="assets/img/blog/badri.png" class="rounded-circle flex-shrink-0" alt="">
+  <div>
+    <h4>Badri Tamang</h4>
 
-  <div class="meta-top">
-    <ul>
-      <li><i class="bi bi-person"></i> Badri Tamang</li>
-      <li><i class="bi bi-clock"></i> May 2026</li>
-    </ul>
-  </div>
-
-  <div class="content">
-
-    <p>
-      When I started my journey in IT fifteen years ago, defensive security was straightforward...
-    </p>
-
-    <p>
-      Fast forward to 2026, AI is deeply embedded into enterprise systems and cloud workflows...
-    </p>
-
-    <blockquote>
-      The greater the autonomy we hand to code, the more catastrophic the exploitation vector becomes if left unguided.
-    </blockquote>
-
-    <h3>1. The Anatomy of Modern AI Risk</h3>
-
-    <p>
-      AI security today is not just about privacy—it is about architectural manipulation...
-    </p>
-
-    <h4>A. Agent Goal Hijacking</h4>
-    <p>
-      Prompt injection has evolved into full-scale agent goal manipulation attacks...
-    </p>
-
-    <h4>B. Tool Misuse and Recursive Exploitation</h4>
-    <p>
-      AI systems connected to enterprise tools can create recursive loops causing DoS conditions...
-    </p>
-
-    <h4>C. Data Poisoning</h4>
-    <p>
-      Malicious training data can introduce silent backdoors into models...
-    </p>
-
-    <img src="assets/img/blog/blog-inside-post.jpg" class="img-fluid">
-
-    <h3>2. Hardening AI Systems</h3>
-
-    <p>
-      AI security requires Zero Trust architecture and multi-layered defense strategies...
-    </p>
-
-    <ul>
-      <li>Treat AI output as untrusted input</li>
-      <li>Apply strict micro-segmentation</li>
-      <li>Deploy behavioral guardrails</li>
-      <li>Maintain AI incident response plans</li>
-    </ul>
-
-    <h3>Conclusion</h3>
-
-    <p>
-      AI security is a system architecture problem—not just a software problem...
-    </p>
-
-  </div>
-
-</article>
-
-</div>
-
-<!-- RIGHT SIDEBAR (UNCHANGED STRUCTURE) -->
-<div class="col-lg-4">
-
-<div class="sidebar">
-
-  <div class="sidebar-item search-form">
-    <h3>Search</h3>
-    <input type="text">
-  </div>
-
-  <div class="sidebar-item categories">
-    <h3>Categories</h3>
-    <ul>
-      <li>AI Security</li>
-      <li>Cloud Security</li>
-      <li>AI Integration</li>
-      <li>IT Consulting</li>
-    </ul>
-  </div>
-
-  <div class="sidebar-item recent-posts">
-    <h3>Recent Posts</h3>
-
-    <div class="post-item">
-      <h4><a href="blog1.html">Securing AI Systems</a></h4>
+    <div class="social-links">
+      <a href="https://twitter.com/"><i class="bi bi-twitter"></i></a>
+      <a href="https://facebook.com/"><i class="bi bi-facebook"></i></a>
+      <a href="https://instagram.com/"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com/"><i class="bi bi-linkedin"></i></a>
     </div>
 
-    <div class="post-item">
-      <h4><a href="blog2.html">Cloud Security Trends</a></h4>
+    <p>
+      Badri Tamang is a cybersecurity professional with over 15 years of experience spanning enterprise infrastructure,
+      cloud security, and AI-driven systems. He specializes in securing modern architectures using Zero Trust principles,
+      DevSecOps practices, and advanced threat modeling techniques.
+    </p>
+
+  </div>
+</div>
+<!-- End post author -->
+
+            <div class="comments">
+
+  <h4 class="comments-count">3 Comments</h4>
+
+  <div class="comment">
+    <div class="d-flex">
+      <div class="comment-img">
+        <img src="assets/img/blog/comments.jpg" alt="">
+      </div>
+      <div>
+        <h5>Alex Morgan</h5>
+        <time datetime="2026-05-10">May 10, 2026</time>
+        <p>
+          Excellent breakdown of Agentic AI risks. The section on goal hijacking really highlights how dangerous prompt manipulation has become in modern systems.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="comment">
+    <div class="d-flex">
+      <div class="comment-img">
+        <img src="assets/img/blog/comments-2.jpg" alt="">
+      </div>
+      <div>
+        <h5>Priya Sharma</h5>
+        <time datetime="2026-05-11">May 11, 2026</time>
+        <p>
+          The Zero Trust approach for AI systems is something many organizations still underestimate. Great to see it emphasized here.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="comment">
+    <div class="d-flex">
+      <div class="comment-img">
+        <img src="assets/img/blog/comments-3.jpg" alt="">
+      </div>
+      <div>
+        <h5>Daniel Kim</h5>
+        <time datetime="2026-05-12">May 12, 2026</time>
+        <p>
+          This article clearly shows that AI security is no longer optional. Behavioral guardrails and logging are critical for any production deployment.
+        </p>
+      </div>
+    </div>
+  </div>
+
+ 
+
+</div>
+<!-- End blog comments -->
+
+          </div>
+
+          <div class="col-lg-4">
+
+            <div class="sidebar">
+
+              <div class="sidebar-item search-form">
+                <h3 class="sidebar-title">Search</h3>
+                <form action="" class="mt-3">
+                  <input type="text">
+                  <button type="submit"><i class="bi bi-search"></i></button>
+                </form>
+              </div><!-- End sidebar search formn-->
+
+            
+              <div class="sidebar-item categories">
+  <h3 class="sidebar-title">Categories</h3>
+  <ul class="mt-3">
+    <li><a href="#">Cyber Security <span>(12)</span></a></li>
+    <li><a href="#">Artificial Intelligence <span>(8)</span></a></li>
+    <li><a href="#">Cloud Security <span>(10)</span></a></li>
+    <li><a href="#">Networking <span>(6)</span></a></li>
+    <li><a href="#">DevSecOps <span>(5)</span></a></li>
+  </ul>
+</div>
+<!-- End sidebar categories-->
+
+              <div class="sidebar-item recent-posts">
+  <h3 class="sidebar-title">Recent Posts</h3>
+
+  <div class="post-item">
+    <img src="assets/img/blog/blog-recent-1.jpg" alt="">
+    <div>
+      <h4><a href="#">Zero Trust Architecture in Cloud Security</a></h4>
+      <time datetime="2026-04-20">April 20, 2026</time>
+    </div>
+  </div>
+
+  <div class="post-item">
+    <img src="assets/img/blog/blog-recent-2.jpg" alt="">
+    <div>
+      <h4><a href="#">Understanding OWASP Top 10 for 2026</a></h4>
+      <time datetime="2026-04-10">April 10, 2026</time>
+    </div>
+  </div>
+
+  <div class="post-item">
+    <img src="assets/img/blog/blog-recent-3.jpg" alt="">
+    <div>
+      <h4><a href="#">Securing Kubernetes Clusters in Production</a></h4>
+      <time datetime="2026-03-28">March 28, 2026</time>
+    </div>
+  </div>
+
+  <div class="post-item">
+    <img src="assets/img/blog/blog-recent-4.jpg" alt="">
+    <div>
+      <h4><a href="#">Top 5 Cloud Security Misconfigurations</a></h4>
+      <time datetime="2026-03-15">March 15, 2026</time>
+    </div>
+  </div>
+
+</div>
+<!-- End sidebar recent posts-->
+
+             <div class="sidebar-item tags">
+  <h3 class="sidebar-title">Tags</h3>
+  <ul class="mt-3">
+    <li><a href="#">AI Security</a></li>
+    <li><a href="#">Cybersecurity</a></li>
+    <li><a href="#">Zero Trust</a></li>
+    <li><a href="#">Cloud Security</a></li>
+    <li><a href="#">Agentic AI</a></li>
+    <li><a href="#">OWASP</a></li>
+    <li><a href="#">DevSecOps</a></li>
+    <li><a href="#">Threat Modeling</a></li>
+    <li><a href="#">Data Protection</a></li>
+    <li><a href="#">Security Architecture</a></li>
+  </ul>
+</div>
+<!-- End sidebar tags-->
+
+            </div><!-- End Sidebar -->
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- End Blog-details Section -->
+
+  </main>
+
+ <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span>BadriG</span>
+          </a>
+          <p>We are social</p>
+          <div class="social-links d-flex mt-4">
+            <a href="https://twitter.com/nischal_rox"><i class="bi bi-twitter"></i></a>
+            <a href="https://www.facebook.com/SoftTechITNetwork"><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/badri-tamang-577854200/"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Useful Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#">Terms of service</a></li>
+            <li><a href="#">Privacy policy</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-6 footer-links">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#service">Software Development</a></li>
+            <li><a href="#service">Web Development</a></li>
+            <li><a href="#service">Digital Marketing</a></li>
+            <li><a href="#service">VAPT & IT Audit</a></li>
+            <li><a href="#service">Remote Support</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+          <h4>Contact Us</h4>
+          <p>Old Baneshwor, Baneshwor Road</p>
+          <p>Kathmandu, 44602</p>
+          <p>Bagmati, Nepal</p>
+          <p class="mt-4"><strong>Phone:</strong> <span>+977 9844228622</span></p>
+          <p><strong>Email:</strong> <span>tamangbadrirch@gmail.com</span></p>
+        </div>
+
+      </div>
     </div>
 
+    <div class="container copyright text-center mt-4">
+      <p>&copy; <span>Copyright</span> <strong class="px-1">BadriG</strong> <span>All Rights Reserved</span></p>
+      <div class="credits">
+       
+        Designed by <a href="https://techloverdude.blogspot.com/">TechLover</a>
+      </div>
+    </div>
+
+  </footer><!-- End Footer -->
+
+  <!-- Scroll Top Button -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
   </div>
 
-  <div class="sidebar-item tags">
-    <h3>Tags</h3>
-    <ul>
-      <li>AI</li>
-      <li>Security</li>
-      <li>Cloud</li>
-      <li>DevSecOps</li>
-    </ul>
-  </div>
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
 
-</div>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 
-</div>
-
-</div>
-</div>
-</section>
-
-</main>
-
-<!-- ===== Footer (UNCHANGED) ===== -->
-<footer id="footer" class="footer">
-  <div class="container text-center">
-    <p>© BadriG - All Rights Reserved</p>
-  </div>
-</footer>
 
 </body>
+
 </html>
