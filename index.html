@@ -1204,9 +1204,76 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
     </section><!-- End Team Section -->
 
    <!-- Call-to-action Section -->
+<!-- Call-to-action Section -->
 <section id="call-to-action" class="call-to-action">
 
-  <img src="assets/img/cta-bg.jpg" alt="">
+  <style>
+    /* Background */
+    #call-to-action {
+      position: relative;
+      padding: 80px 0;
+      color: #fff;
+    }
+
+    #call-to-action img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    #call-to-action::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 2;
+    }
+
+    #call-to-action .container {
+      position: relative;
+      z-index: 3;
+    }
+
+    .cta-content h3 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .cta-content p {
+      font-size: 18px;
+      margin-bottom: 25px;
+    }
+
+    /* Base CTA button (KEEP YOUR THEME STYLE) */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 25px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      background: transparent; /* keep original theme */
+      color: inherit;          /* keep original text color */
+      border: 2px solid currentColor;
+    }
+
+    /* Hover ONLY for WhatsApp */
+    .whatsapp-btn:hover {
+      background-color: #25D366 !important;
+      border-color: #25D366 !important;
+      color: #fff !important;
+      transform: translateY(-2px);
+      filter: brightness(0.95);
+    }
+  </style>
+
+  <img src="assets/img/cta-bg.jpg" alt="CTA Background">
 
   <div class="container">
     <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
@@ -1216,9 +1283,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
 
           <h3>Need Cybersecurity, AI or Cloud Consultation?</h3>
 
-          <p>
-            Let's talk. Anything but IT.
-          </p>
+          <p>Let's talk. Anything but IT.</p>
 
           <!-- WhatsApp Button -->
           <a
@@ -1237,7 +1302,7 @@ document.getElementById("newsletter-form").addEventListener("submit", function(e
   </div>
 
 </section>
-<!-- End Call-to-action Section -->
+<!-- End Call-to-action Section --><!-- End Call-to-action Section --><!-- End Call-to-action Section -->
 
  <!-- Testimonials Section -->
 <section id="testimonials" class="testimonials">
